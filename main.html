@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet"  type="text/css" href="awww.css" />
@@ -23,5 +23,28 @@
   <img src="image/mountains_behind.png" id="mountain" />
   <img src="image/mountains_front.png" id="front" />   
  </section>
+ <script>
+    function rain(){
+        let amount = 30;
+        let body = document.querySelector('body');
+        let i = 0
+        while(i < amount){
+            let drop = document.createElement('i');
+
+            let size = Math.random() * 5;
+            let posX = Math.floor(Math.random()* window.innerWidth);
+            let delay = Math.random() * -20;
+            let duration = Math.random() * 5;
+
+            drop.style.width = 0.2 + size+'px';
+            drop.style.left = posX +'px';
+            drop.style.animationDelay = delay + 's';
+            drop.style.animationDuration = duration + 's';
+            body.appendChild(drop);
+            i++
+        }
+    }
+    rain()
+</script>
 </body>
 </html>
